@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markdown Viewer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Include marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Markdown Viewer<h1>
-    <div id="content"></div>
-    <!-- Missing button here -->
+    <header>
+      <h1>Markdown Viewer</h1>
+      <p class="subtitle">View and render Markdown documents beautifully</p>
+    </header>
+    <div class="toolbar">
+      <button id="refreshBtn" class="btn">Refresh Content</button>
+      <button id="clearBtn" class="btn btn-secondary">Clear View</button>
+    </div>
+    <div id="content" class="markdown-content"></div>
   </div>
   <script src="app.js"></script>
 </body>
