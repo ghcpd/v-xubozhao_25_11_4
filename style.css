@@ -1,14 +1,142 @@
-.container {
-  width: 80%;
-  margin: 0 auto;
-  background-color: #fafafa;
+.app-shell {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
-h1 {
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 10px;
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f6f8fb 0%, #eef1f7 100%);
+  color: #202124;
 }
-#content {
-  margin-top: -20px; /* causes overlap */
-  padding: 5px;
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+  color: #1a73e8;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #1a73e8;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #155fc1;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status {
+  min-height: 1.25rem;
+  font-size: 0.95rem;
+  color: #5f6368;
+}
+
+.status[data-status-type="error"] {
+  color: #d93025;
+}
+
+.markdown-body {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #202124;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #1a73e8;
+}
+
+.markdown-body p {
+  margin-bottom: 1rem;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.markdown-body a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus {
+  text-decoration: underline;
+}
+
+.markdown-body pre {
+  background-color: #f1f3f4;
+  padding: 0.75rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown-body code {
+  font-family: "Fira Code", Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: #f1f3f4;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  button {
+    width: 100%;
+  }
 }
