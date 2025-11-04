@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Markdown Viewer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Markdown Viewer<h1>
-    <div id="content"></div>
-    <!-- Missing button here -->
-  </div>
+  <header class="app-header">
+    <h1>Markdown Viewer</h1>
+    <div class="toolbar" role="group" aria-label="Markdown actions">
+      <button id="loadSampleBtn" type="button">Load Sample</button>
+      <button id="clearBtn" type="button">Clear</button>
+      <button id="themeToggleBtn" type="button" aria-pressed="false">Dark Mode</button>
+    </div>
+  </header>
+  <main class="layout" id="layout">
+    <section class="input-pane" aria-label="Markdown input">
+      <label for="markdownInput" class="visually-hidden">Markdown Input</label>
+      <textarea id="markdownInput" placeholder="Type or paste Markdown here..." spellcheck="false"></textarea>
+    </section>
+    <section class="preview-pane" aria-label="Rendered HTML preview">
+      <div id="content" class="markdown-body" tabindex="0" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="app-footer">
+    <small>Rendered client-side. Basic Markdown support: headings, lists, bold, italic, code, links.</small>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
