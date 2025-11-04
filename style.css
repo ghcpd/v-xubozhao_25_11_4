@@ -1,14 +1,132 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f2f5f8;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
 .container {
-  width: 80%;
-  margin: 0 auto;
-  background-color: #fafafa;
+  width: min(900px, 90%);
+  margin: 2rem auto 3rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
-h1 {
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 10px;
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
+
+.viewer-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+
+.actions button {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actions button:hover,
+.actions button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  outline: none;
+}
+
+.actions button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 #content {
-  margin-top: -20px; /* causes overlap */
-  padding: 5px;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+#content > :first-child {
+  margin-top: 0;
+}
+
+#content h1,
+#content h2,
+#content h3 {
+  color: #0f172a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+#content p,
+#content li {
+  font-size: 1rem;
+}
+
+#content a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+#content a:hover,
+#content a:focus-visible {
+  text-decoration: underline;
+}
+
+#content ul {
+  padding-left: 1.2rem;
+}
+
+#content pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 8px;
+}
+
+.status {
+  color: #64748b;
+  font-style: italic;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .viewer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions button {
+    width: 100%;
+  }
 }
