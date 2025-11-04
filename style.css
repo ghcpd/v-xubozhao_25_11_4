@@ -1,0 +1,14 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+h1 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+#content {
+  margin-top: -20px; /* causes overlap */
+  padding: 5px;
+}
