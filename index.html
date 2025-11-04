@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markdown Viewer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Markdown Viewer<h1>
-    <div id="content"></div>
-    <!-- Missing button here -->
-  </div>
+  <main class="container">
+    <header class="viewer-header">
+      <h1>Markdown Viewer</h1>
+      <div class="actions">
+        <button id="refresh-button" type="button" aria-label="Reload markdown content">Reload</button>
+      </div>
+    </header>
+    <section id="content" aria-live="polite"></section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
